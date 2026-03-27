@@ -1,0 +1,51 @@
+{
+    "plugins": [
+        {
+            "id": "git-flow",
+            "name": "Git Flow Assistant",
+            "version": "1.0.0",
+            "author": "Abross",
+            "description": "Automate Git workflows with AI",
+            "downloads": 1247,
+            "rating": 4.8
+        },
+        {
+            "id": "docker-compose",
+            "name": "Docker Compose Helper",
+            "version": "1.2.0",
+            "author": "Abross",
+            "description": "Generate and manage Docker Compose files",
+            "downloads": 892,
+            "rating": 4.9
+        },
+        {
+            "id": "k8s-dashboard",
+            "name": "K8s Dashboard",
+            "version": "0.9.0",
+            "author": "Community",
+            "description": "View and manage Kubernetes clusters",
+            "downloads": 543,
+            "rating": 4.7
+        }
+    ],
+    "themes": [
+        {
+            "id": "catppuccin",
+            "name": "Catppuccin",
+            "version": "1.0.0",
+            "author": "Catppuccin",
+            "description": "Soothing pastel theme",
+            "downloads": 2103,
+            "rating": 5.0
+        },
+        {
+            "id": "nord",
+            "name": "Nord",
+            "version": "1.1.0",
+            "author": "Nord",
+            "description": "Arctic, north-bluish color palette",
+            "downloads": 1876,
+            "rating": 4.9
+        }
+    ]
+}
