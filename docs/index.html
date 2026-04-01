@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abross.dev Documentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3a 100%);
+            color: #cdd6f4;
+            line-height: 1.6;
+        }
+        .navbar {
+            background: rgba(30, 30, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #cba6f7, #f5c2e7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links a {
+            color: #cdd6f4;
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+            display: flex;
+            gap: 2rem;
+        }
+        .sidebar {
+            width: 250px;
+            position: sticky;
+            top: 6rem;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            color: #cba6f7;
+            margin-bottom: 1rem;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar a {
+            color: #cdd6f4;
+            text-decoration: none;
+        }
+        .sidebar a:hover { color: #cba6f7; }
+        .content {
+            flex: 1;
+        }
+        .content h1, .content h2 {
+            color: #cba6f7;
+            margin: 1.5rem 0 1rem;
+        }
+        .content h1 { margin-top: 0; }
+        .content code {
+            background: #313244;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        .content pre {
+            background: #181825;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .footer {
+            background: #181825;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">abross.dev</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/docs">Docs</a>
+                <a href="/blog">Blog</a>
+                <a href="https://github.com/Kheshie1/abross-ai-terminal">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>📖 Documentation</h3>
+            <ul>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#quick-start">Quick Start</a></li>
+                <li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+                <li><a href="#ai-features">AI Features</a></li>
+                <li><a href="#ssh">SSH Support</a></li>
+                <li><a href="#infrastructure">Infrastructure as Code</a></li>
+                <li><a href="#plugins">Plugins</a></li>
+                <li><a href="#themes">Themes</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>Abross Agentic Development Environment</h1>
+            
+            <h2 id="installation">🚀 Installation</h2>
+            <pre><code>cargo install abross-ai-terminal</code></pre>
+            <p>Or build from source:</p>
+            <pre><code>git clone https://github.com/Kheshie1/abross-ai-terminal
+cd abross-ai-terminal
+cargo build --release
+./target/release/abross-ai-terminal</code></pre>
+
+            <h2 id="quick-start">⚡ Quick Start</h2>
+            <p>Once installed, simply run:</p>
+            <pre><code>abross-ai-terminal</code></pre>
+            <p>Press <code>Ctrl+H</code> for help at any time.</p>
+
+            <h2 id="keyboard-shortcuts">⌨️ Keyboard Shortcuts</h2>
+            <pre><code>Ctrl+A - Toggle AI mode
+Ctrl+T - New tab
+Ctrl+W - Close tab
+Ctrl+R - Rename tab
+Ctrl+Tab - Next tab
+Ctrl+Shift+Tab - Previous tab
+Ctrl+F - Search history
+Ctrl+S - Split pane
+Ctrl+Shift+S - SSH connect
+Ctrl+P - Time travel
+Ctrl+H - Help panel
+Tab - Accept AI suggestion
+↑/↓ - Command history
+Esc - Cancel command
+Ctrl+C - Quit</code></pre>
+
+            <h2 id="ai-features">🤖 AI Features</h2>
+            <p>With AI mode ON (<code>Ctrl+A</code>), try:</p>
+            <pre><code>list files                    → ls -la
+show disk usage              → df -h
+show memory                  → free -h
+find rust files              → find . -name '*.rs'
+show git status              → git status
+create an EC2 instance       → AWS EC2 command
+build a docker image         → docker build -t my-app .
+terraform plan               → terraform plan</code></pre>
+
+            <h2 id="ssh">🔌 SSH Support</h2>
+            <p>Connect to remote servers:</p>
+            <pre><code>ssh://username@hostname:port
+Then press Ctrl+Shift+S to connect</code></pre>
+
+            <h2 id="infrastructure">☁️ Infrastructure as Code</h2>
+            <p>Abross supports multiple cloud providers:</p>
+            <pre><code>• AWS EC2, Lambda, S3, RDS, EKS
+• Kubernetes (Deployment, Service, Ingress)
+• Docker (Dockerfile, Docker Compose)
+• Terraform (init, plan, apply)</code></pre>
+
+            <h2 id="plugins">🔌 Plugins</h2>
+            <p>Install plugins from the marketplace:</p>
+            <pre><code>abross plugin install git-flow
+abross plugin list
+abross plugin update</code></pre>
+
+            <h2 id="themes">🎨 Themes</h2>
+            <p>Change themes in <code>~/.config/abross/config.toml</code>:</p>
+            <pre><code>theme = "catppuccin"
+# Available: dark, light, catppuccin, nord, tokyo-night</code></pre>
+
+            <h2 id="troubleshooting">🔧 Troubleshooting</h2>
+            <p><strong>Terminal not responding?</strong> Press <code>Esc</code> or <code>Ctrl+C</code></p>
+            <p><strong>AI not working?</strong> Set <code>OPENAI_API_KEY</code> environment variable</p>
+            <p><strong>SSH connection fails?</strong> Check your SSH keys and network</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Abross.dev - The Open Source Agentic Development Environment</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abross.dev Blog</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3a 100%);
+            color: #cdd6f4;
+            line-height: 1.6;
+        }
+        .navbar {
+            background: rgba(30, 30, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(203, 166, 247, 0.3);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #cba6f7, #f5c2e7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links a {
+            color: #cdd6f4;
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+        .nav-links a:hover { color: #cba6f7; }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+        .blog-post {
+            background: rgba(30, 30, 46, 0.8);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(203, 166, 247, 0.2);
+            transition: all 0.3s;
+        }
+        .blog-post:hover {
+            transform: translateY(-5px);
+            border-color: rgba(203, 166, 247, 0.5);
+        }
+        .blog-post h2 {
+            color: #cba6f7;
+            margin-bottom: 0.5rem;
+        }
+        .blog-date {
+            color: #6c7086;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .blog-excerpt {
+            margin-bottom: 1rem;
+        }
+        .read-more {
+            color: #a6e3a1;
+            text-decoration: none;
+        }
+        .footer {
+            background: #181825;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(203, 166, 247, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">abross.dev</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="https://github.com/Kheshie1/abross-ai-terminal">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 style="color: #cba6f7; margin-bottom: 2rem;">📝 Blog</h1>
+        
+        <div class="blog-post">
+            <h2>Building Abross: An Open-Source Warp 2.0 Alternative</h2>
+            <div class="blog-date">March 27, 2026</div>
+            <div class="blog-excerpt">How we built a 99.2% feature-complete AI terminal with Rust, achieving better privacy and zero cost...</div>
+            <a href="/blog/building-abross.html" class="read-more">Read more →</a>
+        </div>
+
+        <div class="blog-post">
+            <h2>Multi-Agent AI Systems in Terminal</h2>
+            <div class="blog-date">March 26, 2026</div>
+            <div class="blog-excerpt">Exploring the architecture of 8 specialized AI agents working together...</div>
+            <a href="/blog/multi-agent-ai.html" class="read-more">Read more →</a>
+        </div>
+
+        <div class="blog-post">
+            <h2>Rust vs Go: Building Terminal Applications</h2>
+            <div class="blog-date">March 25, 2026</div>
+            <div class="blog-excerpt">Why Rust was the perfect choice for building a high-performance AI terminal...</div>
+            <a href="/blog/rust-vs-go.html" class="read-more">Read more →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Abross.dev - The Open Source Agentic Development Environment</p>
+    </footer>
+</body>
+</html>

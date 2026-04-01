@@ -5,19 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abross.dev - Agentic Development Environment</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Fira Code', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace;
             background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3a 100%);
             color: #cdd6f4;
             line-height: 1.6;
         }
-
         .navbar {
             background: rgba(30, 30, 46, 0.95);
             backdrop-filter: blur(10px);
@@ -26,9 +20,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(203, 166, 247, 0.3);
         }
-
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -36,7 +28,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
@@ -44,22 +35,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
         .nav-links a {
             color: #cdd6f4;
             text-decoration: none;
-            transition: color 0.3s;
+            margin-left: 2rem;
         }
-
-        .nav-links a:hover {
-            color: #cba6f7;
-        }
-
+        .nav-links a:hover { color: #cba6f7; }
         .hero {
             min-height: 100vh;
             display: flex;
@@ -68,11 +49,6 @@
             text-align: center;
             padding: 6rem 2rem 4rem;
         }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
@@ -80,59 +56,33 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
         .btn {
             padding: 0.8rem 2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            margin: 0 0.5rem;
+            display: inline-block;
         }
-
         .btn-primary {
             background: linear-gradient(135deg, #cba6f7, #b4befe);
             color: #1e1e2e;
         }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(203, 166, 247, 0.4);
-        }
-
         .btn-secondary {
             border: 1px solid #cba6f7;
             color: #cba6f7;
         }
-
-        .btn-secondary:hover {
-            background: rgba(203, 166, 247, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .features {
+        .features, .stats {
             padding: 6rem 2rem;
             background: rgba(24, 24, 37, 0.5);
         }
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: #cba6f7;
         }
-
         .features-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -140,35 +90,18 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
         .feature-card {
             background: rgba(30, 30, 46, 0.8);
             padding: 2rem;
             border-radius: 12px;
+            text-align: center;
             border: 1px solid rgba(203, 166, 247, 0.2);
-            transition: all 0.3s;
         }
-
         .feature-card:hover {
             transform: translateY(-5px);
             border-color: rgba(203, 166, 247, 0.5);
         }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 0.5rem;
-            color: #cba6f7;
-        }
-
-        .stats {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(203, 166, 247, 0.1), rgba(137, 180, 250, 0.1));
-        }
-
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
         .stats-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -177,69 +110,50 @@
             gap: 3rem;
             text-align: center;
         }
-
         .stat-number {
             font-size: 3rem;
             font-weight: bold;
             color: #cba6f7;
         }
-
         .footer {
             background: #181825;
             padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid rgba(203, 166, 247, 0.2);
         }
-
-        .terminal-preview {
-            max-width: 900px;
-            margin: 3rem auto 0;
-            background: #1e1e2e;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(203, 166, 247, 0.3);
+        pre {
+            background: #181825;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 2rem;
             text-align: left;
         }
-
+        code { color: #a6e3a1; }
+        .terminal-preview {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            background: #1e1e2e;
+            border-radius: 12px;
+            text-align: left;
+            border: 1px solid rgba(203, 166, 247, 0.3);
+        }
         .terminal-header {
             background: #181825;
             padding: 0.8rem 1rem;
             display: flex;
             gap: 0.5rem;
         }
-
         .terminal-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
         }
-
         .terminal-dot.red { background: #f38ba8; }
         .terminal-dot.yellow { background: #f9e2af; }
         .terminal-dot.green { background: #a6e3a1; }
-
-        .terminal-body {
-            padding: 1.5rem;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-        }
-
-        .terminal-line {
-            margin-bottom: 0.5rem;
-        }
-
-        .prompt {
-            color: #cba6f7;
-        }
-
-        .command {
-            color: #cdd6f4;
-        }
-
-        .output {
-            color: #a6e3a1;
-            margin-left: 1rem;
-        }
+        .terminal-body { padding: 1.5rem; font-family: monospace; }
+        .prompt { color: #cba6f7; }
+        .output { color: #a6e3a1; margin-left: 1rem; }
     </style>
 </head>
 <body>
@@ -248,21 +162,20 @@
             <div class="logo">abross.dev</div>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#install">Install</a>
-                <a href="https://github.com/abross/abross-ai-terminal">GitHub</a>
+                <a href="/docs">Docs</a>
+                <a href="/blog">Blog</a>
+                <a href="https://github.com/Kheshie1/abross-ai-terminal">GitHub</a>
             </div>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
+        <div>
             <h1>Abross Agentic Development Environment</h1>
-            <p>The open-source AI-powered terminal that rivals Warp 2.0 — with 99.2% feature parity, 100% privacy, and 100% free.</p>
-            <div class="cta-buttons">
-                <a href="#install" class="btn btn-primary">Install Now</a>
-                <a href="https://github.com/abross/abross-ai-terminal" class="btn btn-secondary">View on GitHub</a>
-            </div>
-
+            <p>The open-source AI-powered terminal that rivals Warp 2.0 — 99.2% feature parity, 100% privacy, 100% free.</p>
+            <a href="#install" class="btn btn-primary">Install Now</a>
+            <a href="https://github.com/Kheshie1/abross-ai-terminal" class="btn btn-secondary">View on GitHub</a>
+            
             <div class="terminal-preview">
                 <div class="terminal-header">
                     <div class="terminal-dot red"></div>
@@ -270,23 +183,11 @@
                     <div class="terminal-dot green"></div>
                 </div>
                 <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="prompt">🤖 ></span>
-                        <span class="command"> list files</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output">💡 Suggested: ls -la</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output">total 48</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="prompt">⚡ ></span>
-                        <span class="command"> create an EC2 instance</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output">🚀 AWS EC2 instance will be created</span>
-                    </div>
+                    <div><span class="prompt">🤖 ></span> list files</div>
+                    <div><span class="output">💡 Suggested: ls -la</span></div>
+                    <div><span class="output">total 48 | drwxr-xr-x  12 user  staff   384</span></div>
+                    <div><span class="prompt">⚡ ></span> create an EC2 instance</div>
+                    <div><span class="output">🚀 AWS EC2 instance will be created</span></div>
                 </div>
             </div>
         </div>
@@ -295,36 +196,12 @@
     <section id="features" class="features">
         <h2 class="section-title">✨ Features</h2>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>AI-Powered</h3>
-                <p>8 specialized AI agents with real-time suggestions and self-learning</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Multi-Tabs</h3>
-                <p>Create, rename, close, and switch between tabs</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Search History</h3>
-                <p>Search through command history with highlighting</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⏰</div>
-                <h3>Time Travel</h3>
-                <p>Navigate through command history with progress bar</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔌</div>
-                <h3>SSH Support</h3>
-                <p>Connect to remote servers with persistent connections</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">☁️</div>
-                <h3>Infrastructure as Code</h3>
-                <p>AWS, Kubernetes, Docker, Terraform support</p>
-            </div>
+            <div class="feature-card"><div class="feature-icon">🤖</div><h3>8 AI Agents</h3><p>CodeWriter, Infrastructure, Test, Documentation, Debug, Safety, Shell, Workflow</p></div>
+            <div class="feature-card"><div class="feature-icon">📊</div><h3>Multi-Tabs</h3><p>Create, rename, close, switch tabs with full keyboard control</p></div>
+            <div class="feature-card"><div class="feature-icon">🔍</div><h3>Search History</h3><p>Search commands with real-time highlighting</p></div>
+            <div class="feature-card"><div class="feature-icon">⏰</div><h3>Time Travel</h3><p>Navigate command history with progress bar</p></div>
+            <div class="feature-card"><div class="feature-icon">🔌</div><h3>SSH Support</h3><p>Connect to remote servers with persistent connections</p></div>
+            <div class="feature-card"><div class="feature-icon">☁️</div><h3>Infrastructure as Code</h3><p>AWS, K8s, Docker, Terraform</p></div>
         </div>
     </section>
 
@@ -340,28 +217,24 @@
 
     <section id="install" class="features">
         <h2 class="section-title">🚀 Installation</h2>
-        <div class="features-grid" style="max-width: 600px; margin: 0 auto;">
+        <div style="max-width: 600px; margin: 0 auto;">
             <div class="feature-card">
                 <h3>One-Command Install</h3>
-                <pre style="background: #181825; padding: 1rem; border-radius: 8px; overflow-x: auto;">
-<code style="color: #a6e3a1;">cargo install abross-ai-terminal</code>
-                </pre>
-                <p>Or build from source:</p>
-                <pre style="background: #181825; padding: 1rem; border-radius: 8px;">
-<code style="color: #a6e3a1;">git clone https://github.com/abross/abross-ai-terminal
+                <pre><code>curl -sSL https://raw.githubusercontent.com/Kheshie1/abross-dev/main/install.sh | bash</code></pre>
+                <p>Or using Cargo:</p>
+                <pre><code>cargo install abross-ai-terminal</code></pre>
+                <p>Build from source:</p>
+                <pre><code>git clone https://github.com/Kheshie1/abross-ai-terminal
 cd abross-ai-terminal
 cargo build --release
-./target/release/abross-ai-terminal</code>
-                </pre>
+./target/release/abross-ai-terminal</code></pre>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <p>© 2026 Abross.dev - The Open Source Agentic Development Environment</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem; color: #6c7086;">
-            Built with Rust, Ratatui, and ❤️ | 100% Open Source | 100% Privacy | 100% Free
-        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Built with Rust, Ratatui, and ❤️ | 100% Open Source | 100% Free</p>
     </footer>
 </body>
 </html>
